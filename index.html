@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      html,
+      body {
+        font-family: Arial, sans-serif;;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        bottom: 0px;
+        height: 100%;
+        left: 362px;
+        position: absolute;
+        right: 0px;
+      }
+
+      .options-box {
+        background: #fff;
+        border: 1px solid #999;
+        border-radius: 3px;
+        height: 100%;
+        line-height: 35px;
+        padding: 10px 10px 30px 10px;
+        text-align: left;
+        width: 340px;
+      }
+    </style>
+    <title>Google Maps</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="options-box">
+        <div>
+          <input id="show-listings" type="button" value="Show Activities">
+          <select id="range">
+            <option value="5">5</option>
+            <option value="0">0</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+          </select>
+          miles from Las Vegas Strip Center (Flamingo &amp; Las Vegas Blvd).
+          0 miles specifies all activities
+          <p>
+            <span><img src="markers/pink_MarkerA.png" /> Activites</span>
+            <span><img src="markers/purple_MarkerR.png" /> Strip</span>
+            <span><img src="markers/red_MarkerV.png" /> Sight Seeing</span>
+            <span><img src="markers/paleblue_MarkerW.png" /> Shows</span>
+            <span><img src="markers/green_MarkerE.png" /> Eathing</span>
+            <span><img src="markers/blue_MarkerS.png" /> Shopping</span>
+            <span><img src="markers/brown_MarkerG.png" /> Shooting</span>
+            <span><img src="markers/yellow_MarkerL.png" /> Landmark</span>
+            <span><img src="markers/orange_MarkerZ.png" /> Others</span>
+          </p>
+          <!--
+          <select name="location">
+            <option value="center">Vegas City Center (Flamingo &amp; Las Vegas Blvd)</option>
+            <option value="present">present location (Not working presently)</option>
+          </select>
+          <input id="toggle-drawing" type="button" value="Drawing Tools">
+          <div id="area"> </div>
+        -->
+        </div>
+      </div>
+      <div id="map"> </div>
+    </div>
+
+    <script src="vegasActivities.json"> </script>
+    <script>
+      var map;
+      var markers = [];
+      var callsRemaining;
+      var range;
+      var polygon = null;
+
+      function getIconColor(tags, toggle) {
+        var color = toggle ? "orange" : "yellow";
+        switch (tags[0]) {
+          case "Landmark": color = toggle ? "yellow": "yellow"; break;
+          case "Shooting": color = toggle ? "brown": "yellow"; break;
+          case "Shopping": color = toggle ? "blue": "yellow"; break;
+          case "Eating": color = toggle ? "green": "yellow"; break;
+          case "Shows": color = toggle ? "paleblue": "yellow"; break;
+          case "Sight Seeing": color = toggle ? "red": "yellow"; break;
+          case "Strip": color = toggle ? "purple": "yellow"; break;
+          case "Activities": color = toggle ? "pink": "yellow"; break;
+        }
+        return color;
+      }
+      function getIcon(tags) {
+        var iconType = "Z";
+        switch (tags[0]) {
+          case "Landmark": iconType = "L"; break;
+          case "Shooting": iconType = "G"; break;
+          case "Shopping": iconType = "S"; break;
+          case "Eating": iconType = "E"; break;
+          case "Shows": iconType = "W"; break;
+          case "Sight Seeing": iconType = "V"; break;
+          case "Strip": iconType = "R"; break;
+          case "Activities": iconType = "A"; break;
+        }
+        var icon = 'markers/' + getIconColor(tags, true) + '_Marker' + iconType + '.png';
+        return icon;
+      }
+      function initMap() {
+        google.maps.event.addDomListener(window, "load", function () {
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 36.113050, lng: -115.172975},
+            zoom: 13
+          });
+
+          var infoWindow = new google.maps.InfoWindow();
+
+          var drawingManager = new google.maps.drawing.DrawingManager({
+            drawingMode: google.maps.drawing.OverlayType.POLYGON,
+            drawingControl: true,
+            drawingControlOptions: {
+              position: google.maps.ControlPosition.TOP_LEFT,
+              drawingMode: [
+                google.maps.drawing.OverlayType.POLYGON
+              ]
+            }
+          });
+          for(var i =0; i < vegasActivities.activities.length; i++) {
+            if (!!vegasActivities.activities[i].location) {
+              var marker = new google.maps.Marker({
+                position: vegasActivities.activities[i].location,
+                title: vegasActivities.activities[i].name,
+                description: vegasActivities.activities[i].description,
+                icon: getIcon(vegasActivities.activities[i].tags),
+                tags: vegasActivities.activities[i].tags
+              });
+              markers.push(marker);
+              marker.addListener('click', function () {
+                populateInfoWindow(this, infoWindow);
+              });
+              marker.addListener('mouseover', function() {
+                this.setIcon(this.icon.replace(getIconColor(this.tags, true), getIconColor(this.tags, false)));
+              });
+              marker.addListener('mouseout', function() {
+                this.setIcon(this.icon.replace(getIconColor(this.tags, false), getIconColor(this.tags, true)));
+              });
+            }
+          }
+
+          document.getElementById('show-listings').addEventListener('click',showListings);
+          /*
+          document.getElementById('toggle-drawing').addEventListener('click',function () {
+            if (drawingManager.map) {
+              drawingManager.setMap(null);
+              if (polygon) polygon.setMap(null);
+            } else {
+              drawingManager.setMap(map);
+            }
+          });
+          */
+          drawingManager.addListener('overlaycomplete', function (e) {
+            if (polygon) {
+              polygon.setMap(null);
+            }
+             drawingManager.setDrawingMode(null);
+             polygon = e.overlay;
+             polygon.setEditable(true);
+             searchWithinPolygon();
+             polygon.getPath().addListener('set_at', searchWithinPolygon);
+             polygon.getPath().addListener('insert_at', searchWithinPolygon);
+             var area = google.maps.geometry.spherical.computeArea(polygon.getPath());
+             console.log(area);
+             document.getElementById('area').innerHTML = "Selecte area = " + area;
+          })
+        });
+      }
+      function searchWithinPolygon() {
+        for (var i = 0; i < markers.length; i++) {
+          if (google.maps.geometry.poly.containsLocation(markers[i].position, polygon)) {
+            markers[i].setMap(map);
+          } else {
+            markers[i].setMap(null);
+          }
+        }
+      }
+      function populateInfoWindow (marker, infoWindow) {
+        if (infoWindow != marker) {
+          infoWindow.marker = marker;
+          infoWindow.addListener('closeclick', function () {
+            infoWindow.marker = null;
+          });
+          var streetViewService = new google.maps.StreetViewService();
+          var radius = 50;
+          streetViewService.getPanoramaByLocation(marker.position, radius, getStreetView);
+          infoWindow.open(map, marker);
+        }
+        function getStreetView(data, status) {
+          if (status == google.maps.StreetViewStatus.OK) {
+            var nearStreetViewLocation = data.location.latLng;
+            var heading = google.maps.geometry.spherical.computeHeading(
+              nearStreetViewLocation, marker.position);
+            infoWindow.setContent('<div>' + marker.description + '</div>' +
+              '<div id="pano" style="height:100px">Street View Goes Here</div>');
+            var panoramaOptions = {
+              position: nearStreetViewLocation,
+              pov: {
+                heading: heading,
+                pitch: 0
+              }
+            };
+            var panorama = new google.maps.StreetViewPanorama(
+              document.getElementById('pano'), panoramaOptions);
+          } else {
+            infoWindow.setContent('<div>' + marker.description + '</div>' +
+              '<div>No Street View Found</div>');
+          }
+        }
+      }
+      function showListings(a) {
+        var r = document.getElementById('range');
+        range = parseFloat(r.options[r.selectedIndex].value);
+        var bounds = new google.maps.LatLngBounds();
+        var service = new google.maps.DistanceMatrixService();
+        callsRemaining = markers.length;
+
+        for(var i=0; i < markers.length; i++) {
+          markers[i].setMap(null);
+          service.getDistanceMatrix({
+            origins: [new google.maps.LatLng(36.113050,-115.172975)],
+            destinations: [new google.maps.LatLng(markers[i].position.lat(),markers[i].position.lng())],
+            travelMode: 'DRIVING',
+            unitSystem: google.maps.UnitSystem.IMPERIAL,
+          }, cb(i, bounds));
+        }
+      }
+
+      function cb(i, bounds) {
+        return function (response, status) {
+          --callsRemaining;
+          if ((status == "OK") && (response.rows[0].elements[0].status == "OK")) {
+            var d = parseFloat(response.rows[0].elements[0].distance.text.split(" ")[0]);
+            if ((range == 0) || (d < range)) {
+              markers[i].setMap(map);
+              bounds.extend(markers[i].position);
+            }
+          }
+          if (callsRemaining <= 0) {
+            map.fitBounds(bounds);
+          }
+        }
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2JcVyudGV6roP0tOzdR7sgEMIfmLjVsE&v=3&callback=initMap&libraries=geometry,drawing"
+     async defer></script>
+  </body>
+</html>

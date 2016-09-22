@@ -1,0 +1,1031 @@
+var vegasActivities = {
+  "description": "activities around Las Vegas",
+  "version": 1,
+  "people": [
+    {
+      "name": "Jeff",
+      "visits": [
+        {
+          "name": "mums birthday",
+          "date": "November 8-10, 2016",
+          "activities": [
+            {
+              "description": "motorcycling at Jean Dry Lake",
+              "location": "JeanDryLake - should use substitution with a guid"
+            },
+            {
+              "description": "shooting a Clark county shooting complex",
+              "location": "clark csc - should use substitution with a guid"
+            },
+            {
+              "description": "hiking at red rock park",
+              "location": "red rock - should use substitution with a guid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "carlton",
+      "visits": [
+        {
+          "name": "to do",
+          "activities": [
+            {
+              "description": "rio zipline"
+            },
+            {
+              "description": "henderson italian place"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "name": "dummy",
+      "description": "use to test out features and has all tags",
+      "tags": [
+        "Shooting"
+      ],
+      "website": null,
+      "priority": 0,
+      "dateAdded": "September 7, 2016",
+      "inactiveDate": "September 7, 2016",
+      "inactiveReason": "test inactive"
+    },
+    {
+      "name": "Strip Center",
+      "description": "Center of Las Vegas Strip.",
+      "tags": [
+        "Landmark"
+      ],
+      "location": {
+        "lat": 36.11305,
+        "lng": -115.172975
+      }
+    },
+    {
+      "name": "Battlefield Vegas",
+      "description": "Automatic rifle shooting. Complementary humvee ride from your strip hotel.",
+      "tags": [
+        "Shooting"
+      ],
+      "website": "http://www.battlefieldvegas.com/",
+      "location": {
+        "lat": 36.138845,
+        "lng": -115.16833
+      }
+    },
+    {
+      "name": "Range 702",
+      "description": "Indoor shooting range",
+      "tags": [
+        "Shooting"
+      ],
+      "location": {
+        "lat": 36.080943,
+        "lng": -115.181885
+      }
+    },
+    {
+      "name": "Lovell Canyon",
+      "description": "Shooting in a valley. No club, no ranges, just the woods.",
+      "tags": [
+        "Shooting"
+      ],
+      "location": {
+        "lat": 36.018492,
+        "lng": -115.561378
+      }
+    },
+    {
+      "name": "Clark county shooting complex",
+      "description": "Biggest skeet, traps, etc place in the USA",
+      "tags": [
+        "Shooting"
+      ],
+      "location": {
+        "lat": 36.341683,
+        "lng": -115.211037
+      }
+    },
+    {
+      "name": "Desert sportsman rifle pistol club",
+      "description": "Private club I belong to for shooting with a great view.",
+      "tags": [
+        "Shooting"
+      ],
+      "website": "dsrpc.org",
+      "location": {
+        "lat": 36.150275,
+        "lng": -115.365441
+      }
+    },
+    {
+      "name": "Downtown Summerlin",
+      "description": "Good shopping off the strip.",
+      "tags": [
+        "Shopping"
+      ],
+      "location": {
+        "lat": 36.149623,
+        "lng": -115.333449
+      }
+    },
+    {
+      "name": "Las Vegas Premium Outlets N",
+      "description": "Has Neiman Marcus Last Call and Saks Off Fifth plus a ton of other stores",
+      "tags": [
+        "Shopping"
+      ],
+      "website": "http://www.premiumoutlets.com/outlet/las-vegas-north",
+      "location": {
+        "lat": 36.163486,
+        "lng": -115.156796
+      }
+    },
+    {
+      "name": "Town Square",
+      "description": "South of Mandalay Bay; Shopping, restaurants, movies.",
+      "tags": [
+        "Shopping"
+      ],
+      "location": {
+        "lat": 36.066305,
+        "lng": -115.174302
+      }
+    },
+    {
+      "name": "Forum Shops",
+      "description": "Caesars Palace - Shopping and restaurants",
+      "tags": [
+        "Shopping"
+      ],
+      "location": {
+        "lat": 36.118743,
+        "lng": -115.173072
+      }
+    },
+    {
+      "name": "Fashion Show",
+      "description": "Shopping opposite Wynn; Restaurants.",
+      "tags": [
+        "Shopping"
+      ],
+      "location": {
+        "lat": 36.1257,
+        "lng": -115.170702
+      }
+    },
+    {
+      "name": "Tivoli Village",
+      "description": "Shopping, restaurants, farmers market, vegetarian food",
+      "tags": [
+        "Shopping"
+      ],
+      "location": {
+        "lat": 36.166881,
+        "lng": -115.285998
+      }
+    },
+    {
+      "name": "Bass Pro",
+      "description": "Big store great prices, guns",
+      "tags": [
+        "Shopping"
+      ]
+    },
+    {
+      "name": "El Segundo Sol",
+      "description": "Great Mexican and awesome happy hour; off menu vegetarian options",
+      "tags": [
+        "Eating"
+      ],
+      "location": {
+        "lat": 36.127676,
+        "lng": -115.168127
+      }
+    },
+    {
+      "name": "Komol Thai",
+      "description": "Huge selection of multi asian food; full vegetarian/vegan menu available",
+      "tags": [
+        "Eating"
+      ],
+      "location": {
+        "lat": 36.14226,
+        "lng": -115.142584
+      }
+    },
+    {
+      "name": "Chayo at the Linq",
+      "description": "Mexican food with vegetarian options; has a mechanical bull",
+      "tags": [
+        "Eating"
+      ],
+      "location": {
+        "lat": 36.118632,
+        "lng": -115.167568
+      }
+    },
+    {
+      "name": "Greens & Protein",
+      "description": "if health food is your deal",
+      "tags": [
+        "Eating"
+      ],
+      "location": {
+        "lat": 36.114822,
+        "lng": -115.305156
+      }
+    },
+    {
+      "name": "Yard House",
+      "description": "Country wide chain.  200 beers and a good vegetarian menu",
+      "tags": [
+        "Eating"
+      ],
+      "location": {
+        "lat": 36.068877,
+        "lng": -115.177673
+      }
+    },
+    {
+      "name": "Qdoba",
+      "description": "Country wide chain. mexican, vegetarian options, good gumbo. Dad likes.",
+      "tags": [
+        "Eating"
+      ],
+      "location": {
+        "lat": 36.062097,
+        "lng": -115.243091
+      }
+    },
+    {
+      "name": "Tropical Smoothie Cafe",
+      "description": "cheap good fast food with vegetarian options",
+      "tags": [
+        "Eating"
+      ],
+      "location": {
+        "lat": 36.054599,
+        "lng": -115.280034
+      }
+    },
+    {
+      "name": "Wynn Buffet",
+      "description": "Best weekend brunch buffet",
+      "tags": [
+        "Eating"
+      ],
+      "location": {
+        "lat": 36.128611,
+        "lng": -115.166835
+      }
+    },
+    {
+      "name": "Paris",
+      "description": "Mon Ami Gabi, good view and breakfast",
+      "tags": [
+        "Eating"
+      ],
+      "location": {
+        "lat": 36.111275,
+        "lng": -115.17272
+      }
+    },
+    {
+      "name": "Violette's Vegan",
+      "description": "good vegan food",
+      "tags": [
+        "Eating"
+      ]
+    },
+    {
+      "name": "Sunrise Coffee House",
+      "description": "good vegan and outdoor eating, close to airport and big park on eastern",
+      "tags": [
+        "Eating"
+      ]
+    },
+    {
+      "name": "Red Velvet Cafe",
+      "description": "Serves vegan and non-vegan foods",
+      "tags": [
+        "Eating"
+      ],
+      "location": {
+        "lat": 36.130232,
+        "lng": -115.277602
+      }
+    },
+    {
+      "name": "Jean Philippe Patisserie",
+      "description": "Bellagio - Favorite chocolate, crepes & ice cream. guinness world record.",
+      "tags": [
+        "Eating"
+      ],
+      "website": "http://www.jpchocolates.com/"
+    },
+    {
+      "name": "Elysee Bakery",
+      "description": "Favorite coconut bread",
+      "tags": [
+        "Eating"
+      ],
+      "location": {
+        "lat": 36.111261,
+        "lng": -115.173436
+      }
+    },
+    {
+      "name": "Lazy Dog Restaurant & Bar",
+      "description": "Good food and outdoor eating",
+      "tags": [
+        "Eating"
+      ],
+      "location": {
+        "lat": 36.152779,
+        "lng": -115.334095
+      }
+    },
+    {
+      "name": "Maggiano's",
+      "description": "Country wide chain but the best Italian food ever.",
+      "tags": [
+        "Eating"
+      ],
+      "location": {
+        "lat": 36.127821,
+        "lng": -115.168271
+      }
+    },
+    {
+      "name": "VegeNation",
+      "description": "Vegan and has good alcoholic and non-alcoholic drinks",
+      "tags": [
+        "Eating"
+      ],
+      "location": {
+        "lat": 36.167347,
+        "lng": -115.139463
+      }
+    },
+    {
+      "name": "Pane Vino",
+      "description": "Price fine dining with a good view of the strip at night and go vege options",
+      "tags": [
+        "Eating"
+      ],
+      "location": {
+        "lat": 36.070588,
+        "lng": -115.162679
+      }
+    },
+    {
+      "name": "Cafe Zupas",
+      "description": "Reasonable price salad, soup and sandwich. Vegan and Veggie options.",
+      "tags": [
+        "Eating"
+      ],
+      "location": {
+        "lat": 36.060426,
+        "lng": -115.24194
+      }
+    },
+    {
+      "name": "Wahoos",
+      "description": "California chain with good fish tacos",
+      "tags": [
+        "Eating"
+      ],
+      "location": {
+        "lat": 36.070896,
+        "lng": -115.245158
+      }
+    },
+    {
+      "name": "Tea Station",
+      "description": "Chain Store - Best jasmin milk tea",
+      "tags": [
+        "Eating"
+      ],
+      "location": {
+        "lat": 36.126155,
+        "lng": -115.197614
+      }
+    },
+    {
+      "name": "Coffee Bean & Tea",
+      "description": "Chain Store - Best ice blend teas and coffee. Green tea ice blend is good.",
+      "tags": [
+        "Eating"
+      ],
+      "location": {
+        "lat": 36.077096,
+        "lng": -115.242998
+      }
+    },
+    {
+      "name": "No. 1 Boba Tea",
+      "description": "Fruit drinks and ice cream macaroon, 9340 W Flamingo Rd",
+      "tags": [
+        "Eating"
+      ],
+      "location": {
+        "lat": 36.115827,
+        "lng": -115.294465
+      }
+    },
+    {
+      "name": "Cornish Pasty",
+      "description": "British food that actually tastes good with veggie options",
+      "tags": [
+        "Eating"
+      ],
+      "location": {
+        "lat": 36.142465,
+        "lng": -115.142731
+      }
+    },
+    {
+      "name": "Ventano Italian Grill & Seafood",
+      "description": "Never been here but a few locals suggested it",
+      "tags": [
+        "Eating"
+      ],
+      "location": {
+        "lat": 36.019812,
+        "lng": -115.052987
+      }
+    },
+    {
+      "name": "BATTISTA’S Hole in the wall",
+      "description": "Food so-so, price not great, but folks like it (not me).",
+      "tags": [
+        "Eating"
+      ],
+      "location": {
+        "lat": 36.115138,
+        "lng": -115.168131
+      }
+    },
+    {
+      "name": "Le Reve at the Wynn",
+      "description": "Better than Cirque du Soleil shows",
+      "tags": [
+        "Shows"
+      ],
+      "location": {
+        "lat": 36.12864,
+        "lng": -115.166826
+      }
+    },
+    {
+      "name": "Absinthe at Caesars",
+      "description": "Hilarious; adult only humor",
+      "tags": [
+        "Shows"
+      ],
+      "location": {
+        "lat": 36.117309,
+        "lng": -115.17332
+      }
+    },
+    {
+      "name": "Sin City Comedy and Burlesque",
+      "description": "Planet Hollywood - Groupon includes admission plus drink for $15/person",
+      "tags": [
+        "Shows"
+      ],
+      "location": {
+        "lat": 36.109841,
+        "lng": -115.167587
+      }
+    },
+    {
+      "name": "1923 Bourbon Bar",
+      "description": "Mandalay Bay - This is a speakeasy and has burlesque shows",
+      "tags": [
+        "Bars"
+      ],
+      "location": {
+        "lat": 36.09324,
+        "lng": -115.177843
+      },
+      "website": "http://1923lv.com/"
+    },
+    {
+      "name": "The Velveteen Rabbit",
+      "description": "In downtown Las Vegas; great mixology",
+      "tags": [
+        "Bars"
+      ],
+      "website": "http://velveteenrabbitlv.com/",
+      "location": {
+        "lat": 36.156658,
+        "lng": -115.153805
+      }
+    },
+    {
+      "name": "Red Rock Canyon",
+      "description": "Old Western Town, Strip View Hike (calico tanks) & Turtle Head Peak",
+      "tags": [
+        "Sight Seeing"
+      ],
+      "location": {
+        "lat": 36.131654,
+        "lng": -115.421398
+      }
+    },
+    {
+      "name": "Bonnie Springs",
+      "description": "little old west town near Red Rock Canyon park",
+      "tags": [
+        "Sight Seeing"
+      ],
+      "location": {
+        "lat": 36.059789,
+        "lng": -115.45213
+      }
+    },
+    {
+      "name": "Springs Preserve",
+      "description": "Science, nature exhibits and gardens.",
+      "tags": [
+        "Sight Seeing"
+      ],
+      "website": "http://www.springspreserve.org/",
+      "location": {
+        "lat": 36.170211,
+        "lng": -115.192407
+      }
+    },
+    {
+      "name": "Lake Las Vegas",
+      "description": "Beautiful lake, with restaurants, live music and some shopping.",
+      "tags": [
+        "Sight Seeing"
+      ],
+      "location": {
+        "lat": 36.100928,
+        "lng": -114.93038
+      }
+    },
+    {
+      "name": "Valley of Fire",
+      "description": "Petroglyphs, hiking, rock arch and store with good fireworks nearby.",
+      "tags": [
+        "Sight Seeing"
+      ],
+      "location": {
+        "lat": 36.42981,
+        "lng": -114.513824
+      }
+    },
+    {
+      "name": "Mt Charleston",
+      "description": "Ski resort, hiking and 20 F degree cooler weather.",
+      "tags": [
+        "Sight Seeing"
+      ],
+      "location": {
+        "lat": 36.257569,
+        "lng": -115.64524
+      }
+    },
+    {
+      "name": "Death Valley",
+      "description": "Scenic; hiking; lowest point in USA",
+      "tags": [
+        "Sight Seeing"
+      ],
+      "location": {
+        "lat": 36.457108,
+        "lng": -116.865166
+      }
+    },
+    {
+      "name": "Hoover Dam",
+      "description": "Dam tour. hiking on south side of dam",
+      "tags": [
+        "Sight Seeing"
+      ],
+      "location": {
+        "lat": 36.015599,
+        "lng": -114.746768
+      }
+    },
+    {
+      "name": "Lake Mead",
+      "description": "River boat. Rentals for jet ski's and boats.",
+      "tags": [
+        "Sight Seeing"
+      ],
+      "location": {
+        "lat": 36.024367,
+        "lng": -114.787358
+      }
+    },
+    {
+      "name": "Grand Canyon",
+      "description": "Scenic and hiking",
+      "tags": [
+        "Sight Seeing"
+      ],
+      "location": {
+        "lat": 36.05977,
+        "lng": -112.106638
+      }
+    },
+    {
+      "name": "Dune Buggy Rides",
+      "description": "Fun in the sand north of strip",
+      "tags": [
+        "Sight Seeing"
+      ],
+      "website": "http://www.vegasrazoradventuretours.com/",
+      "location": {
+        "lat": 36.277423,
+        "lng": -115.022043
+      }
+    },
+    {
+      "name": "Zombie Apocalypse Store",
+      "description": "Zombie paraphernalia and picture locations",
+      "tags": [
+        "Sight Seeing"
+      ],
+      "location": {
+        "lat": 36.126796,
+        "lng": -115.185582
+      }
+    },
+    {
+      "name": "Freemont Street",
+      "description": "Free Light Show",
+      "tags": [
+        "Sight Seeing"
+      ],
+      "location": {
+        "lat": 36.169271,
+        "lng": -115.140649
+      }
+    },
+    {
+      "name": "Container park",
+      "description": "A city block made out of big metal shipping containers. Shops and eats.",
+      "tags": [
+        "Sight Seeing"
+      ],
+      "location": {
+        "lat": 36.16824,
+        "lng": -115.138392
+      }
+    },
+    {
+      "name": "Jean Dry Lake",
+      "description": "Big dry lake where many pro photo shoots are done",
+      "tags": [
+        "Sight Seeing"
+      ],
+      "location": {
+        "lat": 35.827573,
+        "lng": -115.283747
+      }
+    },
+    {
+      "name": "The Linq - High Roller",
+      "description": "Largest ferris wheel with good view of Strip; Restaurants and shopping",
+      "tags": [
+        "Strip"
+      ],
+      "location": {
+        "lat": 36.11884,
+        "lng": -115.167826
+      }
+    },
+    {
+      "name": "Stratosphere",
+      "description": "SkyJump; rides at top; best scenic view of Las Vegas",
+      "tags": [
+        "Strip"
+      ],
+      "location": {
+        "lat": 36.146315,
+        "lng": -115.155754
+      }
+    },
+    {
+      "name": "Mandalay Bay",
+      "description": "Shark Reef aquarium",
+      "tags": [
+        "Strip"
+      ],
+      "location": {
+        "lat": 36.093525,
+        "lng": -115.173016
+      }
+    },
+    {
+      "name": "Luxor",
+      "description": "Pyramids",
+      "tags": [
+        "Strip"
+      ],
+      "location": {
+        "lat": 36.096674,
+        "lng": -115.173081
+      }
+    },
+    {
+      "name": "Venetian",
+      "description": "Canals; Shopping",
+      "tags": [
+        "Strip"
+      ],
+      "location": {
+        "lat": 36.122153,
+        "lng": -115.171358
+      }
+    },
+    {
+      "name": "Bellagio",
+      "description": "Fountain show; In door garden, JP patisserie",
+      "tags": [
+        "Strip"
+      ],
+      "location": {
+        "lat": 36.111454,
+        "lng": -115.173139
+      }
+    },
+    {
+      "name": "Mirage",
+      "description": "Dolphins; Siegfried & Roy Tigers etc.; Volcano",
+      "tags": [
+        "Strip"
+      ],
+      "location": {
+        "lat": 36.122181,
+        "lng": -115.171631
+      }
+    },
+    {
+      "name": "Good Timez Pool Hall",
+      "description": "5740 W Charleston Blvd; Smoke-free and nice tables and cue sticks",
+      "tags": [
+        "Activities"
+      ],
+      "website": "http://www.facebook.com/goodtimezbilliards",
+      "location": {
+        "lat": 36.159283,
+        "lng": -115.220274
+      }
+    },
+    {
+      "name": "Vegas Indoor skydiving",
+      "description": "located near Wynn/Encore",
+      "tags": [
+        "Activities"
+      ],
+      "location": {
+        "lat": 36.13268,
+        "lng": -115.161693
+      }
+    },
+    {
+      "name": "SkyJump and rides",
+      "description": "Stratosphere",
+      "tags": [
+        "Activities"
+      ],
+      "location": {
+        "lat": 36.146332,
+        "lng": -115.155704
+      }
+    },
+    {
+      "name": "Ziplining at Rio",
+      "description": "Rio",
+      "tags": [
+        "Activities"
+      ],
+      "location": {
+        "lat": 36.119078,
+        "lng": -115.190085
+      }
+    },
+    {
+      "name": "Ziplining at Fremont Street",
+      "description": "Fremont Street",
+      "tags": [
+        "Activities"
+      ],
+      "location": {
+        "lat": 36.169783,
+        "lng": -115.141787
+      }
+    },
+    {
+      "name": "Kiss Mini golf",
+      "description": "Kiss themed indoor glow in the dark mini golf",
+      "tags": [
+        "Activities"
+      ],
+      "location": {
+        "lat": 36.115352,
+        "lng": -115.187019
+      }
+    },
+    {
+      "name": "Ethel M Chocolates",
+      "description": "Chocolate factory tour. Nice lights especially during Christmas",
+      "tags": [
+        "Activities"
+      ],
+      "location": {
+        "lat": 36.073833,
+        "lng": -115.07086
+      }
+    },
+    {
+      "name": "Mob Museum",
+      "description": "Sis/Eli likes this",
+      "tags": [
+        "Activities"
+      ],
+      "location": {
+        "lat": 36.172555,
+        "lng": -115.141422
+      }
+    },
+    {
+      "name": "Shelby museum",
+      "description": "Sis/Eli likes this",
+      "tags": [
+        "Activities"
+      ],
+      "location": {
+        "lat": 36.072999,
+        "lng": -115.179425
+      }
+    },
+    {
+      "name": "Mountain Edge Park",
+      "description": "Execellent sunset view of the strip. 5-10 minute walk up hill.",
+      "tags": [
+        "Activities"
+      ],
+      "location": {
+        "lat": 36.014065,
+        "lng": -115.261324
+      }
+    },
+    {
+      "name": "CSI Experience",
+      "description": "MGM Grand Hotel - Always wanted to try this.",
+      "tags": [
+        "Activities"
+      ],
+      "location": {
+        "lat": 36.100946,
+        "lng": -115.172842
+      }
+    },
+    {
+      "name": "Cliff diving",
+      "description": "Nelson's landing cliff jumpping at Placer Cove Road (up to 60 feet)",
+      "tags": [
+        "Activities"
+      ],
+      "location": {
+        "lat": 35.705167,
+        "lng": -114.707642
+      }
+    },
+    {
+      "name": "Calico Tanks",
+      "description": "Red Rock Canyon - Good view of the strip.",
+      "tags": [
+        "Hiking"
+      ],
+      "location": {
+        "lat": 36.162361,
+        "lng": -115.450356
+      }
+    },
+    {
+      "name": "Ice Box Canyon",
+      "description": "Red Rock Canyon - Water falls during rain. Hike in a river bed.",
+      "tags": [
+        "Hiking"
+      ],
+      "location": {
+        "lat": 36.150108,
+        "lng": -115.484141
+      }
+    },
+    {
+      "name": "Turtle Head Peak",
+      "description": "Red Rock Canyon - Steep hike and high view of the valley",
+      "tags": [
+        "Hiking"
+      ],
+      "location": {
+        "lat": 36.162361,
+        "lng": -115.450356
+      }
+    },
+    {
+      "name": "Lovell Canyon - Little Zion",
+      "description": "Nice view of Red Rock Canyon and strip.",
+      "tags": [
+        "Hiking"
+      ],
+      "location": {
+        "lat": 36.031085,
+        "lng": -115.555483
+      }
+    },
+    {
+      "name": "Mt. Charleston - Cathedral Rock",
+      "description": "Short hike but excellent view",
+      "tags": [
+        "Hiking"
+      ],
+      "location": {
+        "lat": 36.256458,
+        "lng": -115.646948
+      }
+    },
+    {
+      "name": "Death Valley - Telescope Peak",
+      "description": "14 mile hike",
+      "tags": [
+        "Hiking"
+      ],
+      "location": {
+        "lat": 36.229883,
+        "lng": -117.06838
+      }
+    },
+    {
+      "name": "Zion National Park",
+      "description": "Big national park",
+      "tags": [
+        "Hiking"
+      ],
+      "location": {
+        "lat": 37.200147,
+        "lng": -112.989875
+      }
+    },
+    {
+      "name": "160 to Goodsprings",
+      "description": "Nice view of Strip. Can see wild horses (mustangs).",
+      "tags": [
+        "Off road"
+      ],
+      "location": {
+        "lat": 36.03337,
+        "lng": -115.374412
+      }
+    },
+    {
+      "name": "GoodSpring to peak",
+      "description": "Nice view of Strip. Can see wild horses (mustangs).",
+      "tags": [
+        "Off road"
+      ],
+      "location": {
+        "lat": 35.832424,
+        "lng": -115.431896
+      }
+    },
+    {
+      "name": "Trout Canyon",
+      "description": "Nice view of what living in a remote area looks like",
+      "tags": [
+        "Off road"
+      ],
+      "location": {
+        "lat": 36.165846,
+        "lng": -115.577558
+      }
+    },
+    {
+      "name": "Places I have stayed",
+      "description": "Wynn, Treasure Island, Luxor, MGM Signature, Stratosphere, Balies",
+      "tags": [
+        "Hotels"
+      ],
+      "location": {
+        "lat": 36.114698,
+        "lng": -115.172818
+      }
+    }
+  ]
+}
